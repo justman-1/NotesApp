@@ -1,38 +1,457 @@
-.App {
+body{
+  background: #262731;
+  color: white;
+  font-size: 40px;
+}
+header{
+  height: 150px;
+}
+.addNote{
+  width: 180px;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  background: #8B70E6;
+  border-radius: 150px;
+  border: 55px solid #8B70E6;
+  box-shadow: 10px 70px 145px black;
+  transition: all 0.3s ease;
+  z-index:  1000;
+}
+.allNotes{
+  transition: all 0.5s ease;
+  width: 100%;
+  overflow-x: hidden;
+  display:  grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding:  0% 7%;
+  grid-column-gap:  30px;
+  grid-row-gap:  30px;
+  margin-top:  40px;
+}
+
+
+
+.signupBut{
+  width:  140px;
+  height:  140px;
+  float:  right;
   text-align: center;
+  margin-right:  30px;
+  margin-top:  10px;
+}
+.signupButImg{
+  width:  80px;
+  margin:  5px 30px 0px 35px;
+  filter:  invert(1);
+}
+.signupButSp{
+  text-align: center;
+  position: relative;
+  top:  -5px;
+  font-weight: 600;
+  font-size: 35px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signinBut{
+  width:  140px;
+  height:  140px;
+  float:  right;
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  margin-right:  30px;
+  margin-top:  10px;
+}
+.signinButImg{
+  width:  80px;
+  margin:  5px 30px 0px 35px;
+}
+.signinButSp{
+  text-align: center;
+  color:  black;
+  position: relative;
+  top:  -5px;
+  font-weight: 600;
+  font-size: 35px;
+}
+.signButs{
+  display:  none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.accElems{
+  float:  right;
+  display:  none;
+}
+.logOutImg{
+  float:  right;
+  width:  90px;
+  filter:  invert(1);
+  margin-top:  30px;
+  margin-right:  20px;
+}
+.downloadImg{
+  float:  right;
+  width:  90px;
+  filter:  invert(1);
+  margin-top:  30px;
+  margin-right:  60px;
+  opacity:  0.3;
+}
+.uploadImg{
+  float:  right;
+  width:  90px;
+  filter:  invert(1);
+  margin-top:  30px;
+  margin-right:  30px;
+  opacity:  0.3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+
+
+.logOutBlock{
+  position: fixed;
+  z-index:  1001;
+  width:  70%;
+  padding:  40px;
+  display:  block;
+  left:  15%;
+  background: #262731;
+  border-radius: 30px;
+  box-shadow:  40px 40px 40px black;
+  top: -40%;
+  transform: translateY(-50%);
+  transition:  all 0.5s ease;
+}
+.logOutBlockText{
+  text-align: center;
+  font-size:  50px;
+  font-weight: 600;
+}
+.logOutBlockButs{
+  height: 50px;
+  margin-top:  40px;
+}
+.logOutBlockButNo{
+  float:  left;
+  margin-left:  100px;
+  background: white;
+  color:  #262731;
+  border:  5px solid white;
+  padding:  5px;
+  border-radius: 8px;
+  width:  100px;
+  text-align: center;
+  font-weight: 700;
+  height:  80px;
+}
+.logOutBlockButYes{
+  float:  right;
+  margin-right:  100px;
+  border:  5px solid white;
+  padding:  5px;
+  border-radius: 8px;
+  width:  100px;
+  text-align: center;
+  font-weight: 700;
+  height:  80px;
+}
+
+
+
+
+.note{
+  width: 100%;
+  border-radius: 30px;
+  padding: 40px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.7s ease;
+  user-select: none; 
+}
+.note:nth-child(even){
+  margin-left: 0%;
+}
+.note:last-child{
+  margin-bottom: 4%;
+}
+.noteAllText{
+  padding: 40px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  bottom: 70px;
+  left: 0px;
+  right: 0px;
+}
+.noteName{
+  font-weight: 500;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+.noteText{
+  color: #B3B3B3;
+  width: 100%;
+  word-wrap: break-word;
+}
+.noteTime{
+  width: 100%;
+  word-wrap: break-word;
+  text-align: right;
+  color: #B3B3B3;
+  font-size: 30px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+.noteCheck{
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  transform: scale(5);
+  border-radius: 100px;
+  display: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+
+
+.noteChange{
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 101%;
+  top: 0px;
+  background: #262731;
+  transition: all 0.5s ease;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.noteChangeName{
+  width: 100%;
+  font-size: 55px;
+  transition: all 0.5s ease;
+}
+.noteChangeText{
+  width: 95%;
+  font-size: 50px;
+  position: absolute;
+  top: 250px;
+  bottom: 130px;
+  left: 2.5%;
+  text-align: left;
+  transition: all 0.5s ease;
+}
+textarea{
+  resize: none;
+  background: none;
+  border: 0px solid black;
+  color: white;
+  text-align: center;
+}
+textarea:focus{
+  outline: none;
+}
+.noteDateInfo{
+  height:  110px;
+}
+.noteBack{
+  width: 250px;
+  float:  left;
+}
+.notesBackImg{
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 50px;
+  transform: rotate(180deg)
+}
+.notesBackSp{
+  color: #8B70E6;
+  margin-top: 20px;
+  font-size: 45px;
+}
+.noteChangeFullDate{
+  float:  right;
+  margin-right:  30px;
+}
+.noteChangeDate{
+  font-size: 30px;
+  color:  gray;
+  margin: -5px 0px 0px 0px;
+  text-align: center;
+}
+.noteChangeTime{
+  margin: 10px 20px 0px 0px;
+  font-size: 30px;
+  color:  gray;
+  text-align: center;
+}
+.noteChangeAditional{
+  position: absolute;
+  bottom:  0px;
+  height:  130px;
+  left:  0px;
+  right:  0px;
+  transition:  all 0.5s ease;
+}
+.noteChangeThemes{
+  height: 90px;
+  display:  block;
+  margin:  20px auto;
+  filter:  invert(1);
+  transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+.cancelDelete{
+  position: fixed;
+  top: -110px;
+  left: 30px;
+  transition: all 0.3s ease;
+  transform: rotate(45deg);
+  width: 100px;
+  z-index:  1000;
+}
+.deleteBl{
+  position: fixed;
+  bottom: -180px;
+  left: 0px;
+  right: 0px;
+  background: #3F4055;
+  border-top: 1px solid #262731;
+  transition: all 0.3s ease;
+  z-index:  1000;
+}
+.deleteImg{
+  width: 100px;
+  position: relative;
+  left: -30px;
+  margin: 20px 0px 20px 50%;
+  filter: invert(10);
+}
+
+
+
+
+
+.themes{
+  width:  100%;
+  position: absolute;
+  bottom:  -350px;
+  left:  0px;
+  right:  -199%;
+  height:  340px;
+  display:  flex;
+  z-index:  1001;
+  background: white;
+  overflow-x: auto;
+  transition:  all 0.5s ease;
+}
+.theme{
+  height:  280px;
+  margin-top:  30px;
+  margin-left:  40px;
+  min-width:  230px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 270px;
+  font-size:  120px;
+  font-weight: 300;
+  border-radius:  20px;
+  transition: all 0.5s ease ;
+  display: inline-block;
+}
+
+
+
+
+
+
+.signUpIn{
+  position: fixed;
+  top:  0px;
+  right:  0px;
+  left:  0px;
+  bottom: 0px;
+  background: #262731;
+  transition: all 0.4s ease;
+  opacity: 0;
+  z-index:  1001;
+  display:  none;
+  font-family:  trebuchet ms;
+}
+.signUpInArrow{
+  width:  80px;
+  filter:  invert(1);
+  transform: rotate(180deg);
+  position: relative;
+  top:  20px;
+  left:  40px;
+}
+
+
+
+
+.signupBl{
+  width:  60%;
+  margin-left:  20%;
+  height:  100%;
+}
+.signUpSp{
+  text-align: center;
+  font-size:  80px;
+  font-weight: 600;
+  margin-top:  170px;
+  font-family:  trebuchet ms;
+}
+.signUpName{
+  width:  100%;
+  height:  100px;
+  background: none;
+  border: 0px solid white;
+  border-bottom: 10px solid white;
+  color:  white;
+  margin-top: 300px;
+  border-radius: 5px;
+  font-size:  50px;
+}
+.signUpIn input:focus{
+  outline:  none;
+}
+.signUpPass{
+  margin-top: 100px;
+  width:  100%;
+  height:  100px;
+  background: none;
+  border: 0px solid white;
+  border-bottom: 10px solid white;
+  color:  white;
+  border-radius: 5px;
+  font-size:  50px;
+}
+.signUpSend{
+  width:  50%;
+  text-align: center;
+  border-radius: 50px;
+  background: #3F4055;
+  font-size:  60px;
+  padding:  10px;
+  display:  block;
+  margin:  150px auto 0px auto;
+}
+.signUpError{
+  width:  100%;
+  color:  red;
+  text-align: center;
+  margin-top:  20px;
+}
+.signUpSignin{
+  text-align: center;
+  text-decoration: underline;
 }
