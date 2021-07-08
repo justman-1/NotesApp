@@ -209,7 +209,7 @@ export default function Header(){
 				store.dispatch({type: 'downloadNotes', value: data})
 				localStorage.setItem('Notes', JSON.stringify(data))
 			},
-			error: function(req, z, q){
+			error: function(data, z, q){
 				if(data.status != 499){
 		        	alert('error ' + data.status)
 		        }
