@@ -88,7 +88,7 @@ export default function Signup(props){
 		let data = {login: signupLogin.current.value, password1: signupPass.current.value, password2: signupPass.current.value}
 		$.ajax({
 			type: "GET",
-			url: '/signup',
+			url: 'https://reactnotesappserver.herokuapp.com/signup',
 			data: data,
 			async: true,
 			contentType: 'application/json',
@@ -150,7 +150,7 @@ export default function Signup(props){
 		console.log({login: signupLogin.current.value, password1: signupPass.current.value, password2: signupPass.current.value})
 		$.ajax({
 			type: "GET",
-			url: '/signin',
+			url: 'https://reactnotesappserver.herokuapp.com/signin',
 			data: data,
 			async: true,
 			contentType: 'application/json',

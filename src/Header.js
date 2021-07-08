@@ -36,7 +36,7 @@ export default function Header(){
 				display: 'block'
 			})
 			$.ajax({
-				url: '/getUserNotes',
+				url: 'https://reactnotesappserver.herokuapp.com/getUserNotes',
 				type: 'GET',
 				data: JSON.parse(localStorage.getItem('user')),
 				success: function(data){
@@ -137,7 +137,7 @@ export default function Header(){
 			display: 'block'
 		})
 		$.ajax({
-			url: '/uploadNotes',
+			url: 'https://reactnotesappserver.herokuapp.com/uploadNotes',
 			type: 'GET',
 			data: {user: JSON.parse(localStorage.getItem('user')), notes: JSON.parse(localStorage.getItem('Notes'))},
 			success: function(data){
@@ -193,7 +193,7 @@ export default function Header(){
 			display: 'block'
 		})
 		$.ajax({
-			url: '/getUserNotes',
+			url: 'https://reactnotesappserver.herokuapp.com/getUserNotes',
 			type: 'GET',
 			data: JSON.parse(localStorage.getItem('user')),
 			success: function(data){
